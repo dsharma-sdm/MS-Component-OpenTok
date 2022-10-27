@@ -1,0 +1,106 @@
+<!-- <div [ngClass]="{'publishing': publishing}" #publisherDiv>
+    <button mat-raised-button >Switch Camera</button>
+    <button mat-raised-button (click)="toggleScreen()" >{{ isScreenShare ? 'Stop Sharing' : 'Share Screen' }}</button>
+</div> -->
+<!-- <div>
+  <span class="material-icons video video-record-off" style="color: #d00;">
+    fiber_manual_record </span
+  >&nbsp;Call Recording Started
+</div> -->
+<div [ngClass]="{ publishing: publishing }" #publisherDiv class="mb-3">
+    <!-- {{ isVideo ? 'Video Off' : 'Video On' }} -->
+</div>
+<div class="video-button">
+    <div class="">
+        <mat-form-field class="mat-focused-1">
+            <mat-select placeholder="Screen Size" name="screenId" [(ngModel)]="screenId" (selectionChange)="setScreenSize($event)">
+                <mat-option *ngFor="let s of screenSize" [value]="s">
+                    {{ s.size }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" (click)="toggleVideo(isVideo)" [disabled]="isVideoBtn" class="text-uppercase mat-raised-button ml-2">
+    <!-- <span
+      class="material-icons video video-on"
+      *ngIf="isVideo"
+      style="color: #fff;"
+      title="Click to pause video"
+    >
+      videocam
+    </span> -->
+    <i class="material-icons video video-on" *ngIf="isVideo"
+    style="font-size: 48px;color: #fff; border: solid 3px; border-radius: 50%;"
+    title="Click to pause video">videocam</i>
+    <!-- <span
+      class="material-icons video video-pause"
+      *ngIf="!isVideo"
+      style="color: #fff;"
+      title="Click to start video"
+    >
+      videocam_off
+    </span> -->
+    <i class="material-icons video video-on" *ngIf="!isVideo"
+    style="font-size: 48px;color: #fff; border: solid 3px; border-radius: 50%;"
+    title="Click to start video">videocam_off</i>
+  </button>
+    <button mat-raised-button title="Click to end video call" style="padding: 5px !important;" color="warn" [disabled]="isVideoBtn" (click)="endCall()" class="text-uppercase mat-raised-button ml-2 btn-call-end">
+    <!-- <span
+      class="material-icons call-end"
+      style="color: #fff;"(click)="endCall()"
+      title="Click to end video call" (click)="endCall()"
+    >
+      call_end
+    </span> -->
+    <i class="material-icons call-end " style="font-size: 48px; color: red; border: solid 3px; border-radius: 50%;">call_end</i>
+  </button>
+
+    <!-- //Commented for now chatbox not working -->
+    <!-- <button
+    mat-raised-button
+    color="warn"
+    (click)="startChat()"
+    class="text-uppercase mat-raised-button ml-2"
+  >
+    <span
+      class="material-icons text-chat"
+      style="color: #fff;"
+      title="Click to start text chat"
+    >
+      chat
+    </span>
+  </button> -->
+
+
+    <button mat-raised-button color="warn" (click)="startStopCallRecording()" class="text-uppercase mat-raised-button ml-2">
+    <!-- <span
+      class="material-icons video video-record-on"
+      *ngIf="!isVideoRecord"
+      style="color: #fff;"
+      title="Click to start recording"
+    >
+      voicemail
+    </span> -->
+    <i class="material-icons video video-record-on "  *ngIf="!isVideoRecord" title="Click to start recording" style="font-size: 48px; color:#fff; border: solid 3px; border-radius: 50%;">voicemail</i>
+    <!-- <span
+      class="material-icons video video-record-off"
+      *ngIf="isVideoRecord"
+      style="color: #d00;"
+      title="Click to stop recording"
+    >
+      fiber_manual_recordClick to stop recording
+    </span> -->
+    <i class="material-icons video video-record-off "  *ngIf="isVideoRecord"  title="Click to stop recording" style="font-size: 48px; color: red; border: solid 3px; border-radius: 50%;">fiber_manual_record</i>
+  </button>
+    <button mat-raised-button color="accent" (click)="addNewCaller()" [disabled]="isVideoBtn" class="text-uppercase mat-raised-button ml-2">
+    <!-- <span
+      class="material-icons"
+      *ngIf="isProvider"
+      style="color: #51da51;"
+      title="Click to add new user"
+    >
+      person_add
+    </span> -->
+    <i class="material-icons video video-record-on " *ngIf="isProvider" title="Click to add new user" style="font-size: 48px; color:#fff; border: solid 3px; border-radius: 50%;">person_add</i>
+  </button>
+</div>

@@ -1,0 +1,5 @@
+.video-button {
+  position: absolute;
+  bottom: 25px;
+  z-index: 1;
+}

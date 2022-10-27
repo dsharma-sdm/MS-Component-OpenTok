@@ -1,0 +1,51 @@
+/* app-publisher,
+app-subscriber {
+  display: block;
+  float: left;
+}
+
+.video-call {
+  width: 700px;
+  height: 500px;
+}
+app-video-chat .readmin-panel {
+  height: calc(100vh - 135px);
+}
+.OT_publisher {
+  position: absolute;
+  z-index: 1;
+  right: 25px;
+  bottom: 15px;
+  width: 110px !important;
+  height: 80px !important;
+}
+.OT_subscriber {
+  width: auto !important;
+  height: initial !important;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.video-call {
+  width: 100%;
+  border: solid 1px #f4f7fc;
+  background: #000;
+  color: #fff;
+}
+.video-call::before {
+  content: "Connecting...Please wait";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-size: 15px;
+}
+.OT_name.OT_edge-bar-item.OT_mode-auto {
+  visibility: hidden;
+} */
+.soap-note-video {
+  left: 47% !important;
+  transition: linear all 300ms;
+}

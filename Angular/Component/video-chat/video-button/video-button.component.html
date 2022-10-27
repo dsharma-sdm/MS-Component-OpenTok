@@ -1,0 +1,33 @@
+<!-- <div class="video-button">
+  <div class="">
+    <mat-form-field class="mat-focused-1">
+      <mat-select placeholder="Screen Size" name="screenId" [(ngModel)]="screenId" (selectionChange)="setScreenSize($event)">
+
+        <mat-option *ngFor="let s of screenSize" [value]="s">
+          {{s.size}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="accent" (click)="toggleVideo(isVideo)" [disabled]="isVideoBtn" class="text-uppercase mat-raised-button ml-2">
+    <span class="material-icons video video-on" *ngIf="isVideo" style="color:#fff" title="Click to pause video">
+        videocam
+        </span>
+        <span class="material-icons video video-pause" *ngIf="!isVideo" style="color:#fff" title="Click to start video">
+            videocam_off
+            </span>
+   </button>
+  <button mat-raised-button color="warn" [disabled]="isVideoBtn" (click)="endCall()" class="text-uppercase mat-raised-button ml-2 btn-call-end"><span class="material-icons call-end" style="color:#fff" title="Click to end video call">
+        call_end
+        </span></button>
+  <button mat-raised-button color="warn" (click)="startChat()" class="text-uppercase mat-raised-button ml-2"><span class="material-icons text-chat" style="color:#fff" title="Click to start text chat">
+            chat
+            </span></button>
+  <button mat-raised-button color="accent" (click)="addNewCaller()" [disabled]="isVideoBtn" class="text-uppercase mat-raised-button ml-2">
+            <span class="material-icons" *ngIf="isProvider" style="color:#51da51" title="Click to add new user">
+                person_add
+                </span>
+              
+           </button>
+
+</div> -->
